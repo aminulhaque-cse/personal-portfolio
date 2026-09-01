@@ -130,6 +130,89 @@ function typeEffect() {
 
 typeEffect();
 
+/* =========================
+   Contact Form - Formspree
+========================= */
+
+let contactForm =
+    document.getElementById("contact-form");
+
+let formStatus =
+    document.getElementById("form-status");
+
+let submitButton =
+    document.getElementById("submit-button");
+
+
+contactForm.addEventListener("submit", async function (event) {
+
+    event.preventDefault();
+
+
+    submitButton.textContent = "Sending...";
+
+    submitButton.disabled = true;
+
+
+    let formData = new FormData(contactForm);
+
+
+    try {
+
+        let response = await fetch(
+            contactForm.action,
+            {
+                method: "POST",
+
+                body: formData,
+
+                headers: {
+                    "Accept": "application/json"
+                }
+            }
+        );
+
+
+        if (response.ok) {
+
+            formStatus.textContent =
+                "🎉 Thank you! Your message has been sent successfully.";
+
+            formStatus.className =
+                "success-message";
+
+
+            contactForm.reset();
+
+
+        } else {
+
+            formStatus.textContent =
+                "❌ Oops! Something went wrong. Please try again.";
+
+            formStatus.className =
+                "error-message";
+
+        }
+
+    } catch (error) {
+
+        formStatus.textContent =
+            "❌ Network error. Please check your internet connection.";
+
+        formStatus.className =
+            "error-message";
+
+    }
+
+
+    submitButton.textContent =
+        "Send Message";
+
+    submitButton.disabled = false;
+
+});
+
 
 /* =========================
    Student Object
