@@ -132,65 +132,6 @@ typeEffect();
 
 
 /* =========================
-   Contact Form
-========================= */
-
-let contactForm =
-    document.getElementById("contact-form");
-
-
-contactForm.addEventListener("submit", function (event) {
-
-    event.preventDefault();
-
-
-    let name =
-        document.getElementById("name").value.trim();
-
-
-    let email =
-        document.getElementById("email").value.trim();
-
-
-    let message =
-        document.getElementById("message").value.trim();
-
-
-    if (name === "") {
-
-        alert("Please enter your name.");
-
-        return;
-
-    }
-
-
-    if (email === "") {
-
-        alert("Please enter your email.");
-
-        return;
-
-    }
-
-
-    if (message === "") {
-
-        alert("Please enter your message.");
-
-        return;
-
-    }
-
-
-    alert(
-        "Thank you! Your message has been submitted."
-    );
-
-});
-
-
-/* =========================
    Student Object
 ========================= */
 
@@ -222,7 +163,9 @@ let skills = [
     "GitHub"
 ];
 
+
 console.log(skills);
+
 
 /* =========================
    Back To Top
@@ -258,3 +201,34 @@ backToTop.addEventListener("click", function () {
     });
 
 });
+
+
+/* =========================
+   Project Details
+========================= */
+
+function showDetails(project) {
+
+    if (project === "calculator") {
+
+        alert(
+
+            "Calculator\n\n" +
+
+            "A simple calculator built with HTML, CSS and JavaScript.\n\n" +
+
+            "Features:\n" +
+
+            "• Addition\n" +
+
+            "• Subtraction\n" +
+
+            "• Multiplication\n" +
+
+            "• Division"
+
+        );
+
+    }
+
+}
