@@ -2043,3 +2043,39 @@ body {
 
     white-space: nowrap;
 }
+/* =========================
+   Contact Form Message
+========================= */
+
+#form-status {
+
+    margin-top: 15px;
+
+    text-align: center;
+
+    font-weight: bold;
+
+}
+
+
+.success-message {
+
+    color: #22c55e;
+
+}
+
+
+.error-message {
+
+    color: #ef4444;
+
+}
+
+
+#submit-button:disabled {
+
+    opacity: 0.7;
+
+    cursor: not-allowed;
+
+}
